@@ -158,5 +158,11 @@
   <ItemGroup>
     <None Include="Resources\continueButton.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arena_plant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\props_chest_closed.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

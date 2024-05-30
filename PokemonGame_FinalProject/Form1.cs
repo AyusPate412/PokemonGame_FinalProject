@@ -12,7 +12,9 @@ namespace PokemonGame_FinalProject
 {
     public partial class Form1 : Form
     {
+        Random randGen = new Random();
         //Player
+        Rectangle chest = new Rectangle(30, 40, 30, 30);
         Rectangle player1 = new Rectangle(100, 100, 35, 40);
 
         Image[] playerMovements = { Properties.Resources.down1, Properties.Resources.left1, Properties.Resources.right1, Properties.Resources.up1 };
@@ -27,16 +29,24 @@ namespace PokemonGame_FinalProject
         Image grassImg = Properties.Resources.bg;
         Image forrestImg = Properties.Resources.forest;
 
+        //Arena
+        Rectangle grassArena = new Rectangle(300, 100, 200, 200);
+        Image plantArena = Properties.Resources.arena_plant;
+
         //Brush
         SolidBrush transparent = new SolidBrush(Color.Transparent);
 
-        //Player Speed
-        int player1Speed = 5;
+        //Chest Image
+        Image chestImg = Properties.Resources.chestImg;
+
+        //Player Stats
+        int player1Speed = 15;
+        int playerName;
 
         int pokemonLv = 1;
         int pokemonHealth = 1000;
         int bossHealth = 10000;
-
+        int playerMoney = 0;
 
         //Player Movement Booleans
         bool wPressed = false;
@@ -47,20 +57,15 @@ namespace PokemonGame_FinalProject
         //Check the start button
         bool startButtonClicked = false;
 
+        //Check what screen the player is on
+        bool arenaScreen = false;
+
         public Form1()
         {
             InitializeComponent();
             InitializeMainScreen();
             playerCurrentDirection = playerMovements[1];
             gameTimer.Enabled = false;
-
-            this.KeyDown += new KeyEventHandler(Form1_KeyDown);
-            this.KeyUp += new KeyEventHandler(Form1_KeyUp);
-            this.Paint += new PaintEventHandler(Form1_Paint);
-            this.gameTimer.Tick += new EventHandler(gameTimer_Tick);
-
-            // Ensure the form has focus
-            this.Focus();
         }
 
         
@@ -86,6 +91,7 @@ namespace PokemonGame_FinalProject
 
         public void InitializeMainScreen()
         {
+            gameTimer.Enabled = true;
             pikachu.Visible = false;
             squirtle.Visible = false;
             charmander.Visible = false;
@@ -116,17 +122,18 @@ namespace PokemonGame_FinalProject
 
         public void PlayerMovement()
         {
-            if (wPressed == true)
+            if (wPressed == true && player1.Y > 0)
             {
                 player1.Y -= player1Speed;
                 playerCurrentDirection = playerMovements[3];
             }
-            if (sPressed ==true)
+
+            if (sPressed == true && player1.Y < this.Height - 80)
             {
                 player1.Y += player1Speed;
                 playerCurrentDirection = playerMovements[0];
             }
-            if (aPressed == true)
+            if (aPressed == true && player1.X > 0)
             {
                 player1.X -= player1Speed;
                 playerCurrentDirection = playerMovements[1];
@@ -136,18 +143,47 @@ namespace PokemonGame_FinalProject
             {
                 player1.X += player1Speed;
                 playerCurrentDirection = playerMovements[2];
+
+                if(player1.X > this.Width)
+                {
+                    arenaScreen = true;
+                    player1.X = 0;
+                }
+//Add so that player can go back from the arena screen to the main screen
+
+                else if (arenaScreen == true && player1.X <= this.Width)
+                {
+                    player1.X += player1Speed;
+                }
             }
         }
 
-       
+        private void chestSpawn()
+        {
+            int randXChest = randGen.Next(50, this.Width - 50);
+            int randYChest = randGen.Next(50, this.Height - 50);
+            int randCoins = randGen.Next(1, 4);
+
+
+            if (player1.IntersectsWith(chest))
+            {
+                randXChest = randGen.Next(50, this.Width - 50);
+                randYChest = randGen.Next(50, this.Height - 50);
+                chest.X = randXChest;
+                chest.Y = randYChest;
+                randCoins = randGen.Next(1, 4);
+                playerMoney += randCoins;
+            }
+        }
+ 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            if(gameTimer.Enabled == false && startButtonClicked == false)
+            if (gameTimer.Enabled == false && startButtonClicked == false)
             {
                 e.Graphics.DrawImage(forrestImg, grass);
                 titleLabel.Image = Properties.Resources.Pokemon_Sign;
             }
-            else if(gameTimer.Enabled == false && startButtonClicked == true)
+            else if (gameTimer.Enabled == false && startButtonClicked == true)
             {
                 InitializePokemonChoosingScreen();
                 e.Graphics.DrawImage(forrestImg, grass);
@@ -157,12 +193,26 @@ namespace PokemonGame_FinalProject
                 InitializeMainScreen();
                 e.Graphics.DrawImage(grassImg, grass);
                 e.Graphics.DrawImage(playerCurrentDirection, player1);
+                e.Graphics.DrawImage(chestImg,chest);
+               // e.Graphics.DrawString($"Coins:{playerMoney}");
+                    
+
+                if (gameTimer.Enabled == true && arenaScreen == true)
+                    {
+                        e.Graphics.Clear(Color.White);
+                        e.Graphics.DrawImage(grassImg, grass);
+                        e.Graphics.DrawImage(playerCurrentDirection, player1);
+                        e.Graphics.DrawImage(plantArena, grassArena);
+                    }
             }
+
         }
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
             PlayerMovement();
+            chestSpawn();
+           
             Refresh();
         }
 
@@ -177,7 +227,6 @@ namespace PokemonGame_FinalProject
             startButton.Visible = false;
             exitButton.Visible = false;
         }
-
 
         private void pikachu_Click(object sender, EventArgs e)
         {
@@ -203,7 +252,8 @@ namespace PokemonGame_FinalProject
         {
             gameTimer.Enabled = true;
             gameTimer.Start();
-            if (pokemonPreview.Image == pokemonsList[1])
+
+            if (pokemonPreview.Image == pokemonsList[0])
             {
                 actualPokemon = "Pikachu";
             }
@@ -219,6 +269,13 @@ namespace PokemonGame_FinalProject
             {
                 actualPokemon = "Bulbasaur";
             }
+
+            //foreach (Control c in this.Controls)
+            //{
+            //    c.Enabled = false;
+            //}
+
+         
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
