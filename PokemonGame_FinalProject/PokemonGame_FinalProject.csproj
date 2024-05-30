@@ -164,5 +164,23 @@
   <ItemGroup>
     <None Include="Resources\props_chest_closed.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green_tree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green_tree_bushy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green_tree_small.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

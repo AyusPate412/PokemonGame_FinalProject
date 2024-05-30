@@ -75,7 +75,7 @@
             // playerNameInput
             // 
             this.playerNameInput.Location = new System.Drawing.Point(91, 463);
-            this.playerNameInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.playerNameInput.Margin = new System.Windows.Forms.Padding(4);
             this.playerNameInput.Name = "playerNameInput";
             this.playerNameInput.Size = new System.Drawing.Size(132, 22);
             this.playerNameInput.TabIndex = 9;
@@ -84,7 +84,7 @@
             // 
             this.continueButton.Image = global::PokemonGame_FinalProject.Properties.Resources.continueButton;
             this.continueButton.Location = new System.Drawing.Point(79, 512);
-            this.continueButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.continueButton.Margin = new System.Windows.Forms.Padding(4);
             this.continueButton.Name = "continueButton";
             this.continueButton.Size = new System.Drawing.Size(169, 41);
             this.continueButton.TabIndex = 11;
@@ -94,7 +94,7 @@
             // pokemonPreview
             // 
             this.pokemonPreview.Location = new System.Drawing.Point(703, 278);
-            this.pokemonPreview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pokemonPreview.Margin = new System.Windows.Forms.Padding(4);
             this.pokemonPreview.Name = "pokemonPreview";
             this.pokemonPreview.Size = new System.Drawing.Size(304, 262);
             this.pokemonPreview.TabIndex = 10;
@@ -105,7 +105,7 @@
             this.playerPreview.BackColor = System.Drawing.Color.Transparent;
             this.playerPreview.Image = global::PokemonGame_FinalProject.Properties.Resources.down4;
             this.playerPreview.Location = new System.Drawing.Point(113, 322);
-            this.playerPreview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.playerPreview.Margin = new System.Windows.Forms.Padding(4);
             this.playerPreview.Name = "playerPreview";
             this.playerPreview.Size = new System.Drawing.Size(92, 133);
             this.playerPreview.TabIndex = 8;
@@ -116,7 +116,7 @@
             this.squirtle.BackColor = System.Drawing.Color.YellowGreen;
             this.squirtle.Image = ((System.Drawing.Image)(resources.GetObject("squirtle.Image")));
             this.squirtle.Location = new System.Drawing.Point(797, 15);
-            this.squirtle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.squirtle.Margin = new System.Windows.Forms.Padding(4);
             this.squirtle.Name = "squirtle";
             this.squirtle.Size = new System.Drawing.Size(232, 241);
             this.squirtle.TabIndex = 6;
@@ -128,7 +128,7 @@
             this.bulbasaur.BackColor = System.Drawing.Color.YellowGreen;
             this.bulbasaur.Image = ((System.Drawing.Image)(resources.GetObject("bulbasaur.Image")));
             this.bulbasaur.Location = new System.Drawing.Point(539, 15);
-            this.bulbasaur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bulbasaur.Margin = new System.Windows.Forms.Padding(4);
             this.bulbasaur.Name = "bulbasaur";
             this.bulbasaur.Size = new System.Drawing.Size(232, 241);
             this.bulbasaur.TabIndex = 5;
@@ -140,7 +140,7 @@
             this.charmander.BackColor = System.Drawing.Color.YellowGreen;
             this.charmander.Image = ((System.Drawing.Image)(resources.GetObject("charmander.Image")));
             this.charmander.Location = new System.Drawing.Point(279, 15);
-            this.charmander.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.charmander.Margin = new System.Windows.Forms.Padding(4);
             this.charmander.Name = "charmander";
             this.charmander.Size = new System.Drawing.Size(232, 241);
             this.charmander.TabIndex = 4;
@@ -152,7 +152,7 @@
             this.pikachu.BackColor = System.Drawing.Color.YellowGreen;
             this.pikachu.Image = ((System.Drawing.Image)(resources.GetObject("pikachu.Image")));
             this.pikachu.Location = new System.Drawing.Point(16, 15);
-            this.pikachu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pikachu.Margin = new System.Windows.Forms.Padding(4);
             this.pikachu.Name = "pikachu";
             this.pikachu.Size = new System.Drawing.Size(232, 241);
             this.pikachu.TabIndex = 3;
@@ -164,7 +164,7 @@
             this.exitButton.BackColor = System.Drawing.Color.OrangeRed;
             this.exitButton.Image = global::PokemonGame_FinalProject.Properties.Resources.Exit;
             this.exitButton.Location = new System.Drawing.Point(407, 448);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(4);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(204, 92);
             this.exitButton.TabIndex = 2;
@@ -177,7 +177,7 @@
             this.startButton.Image = global::PokemonGame_FinalProject.Properties.Resources.Start;
             this.startButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.startButton.Location = new System.Drawing.Point(385, 263);
-            this.startButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.startButton.Margin = new System.Windows.Forms.Padding(4);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(245, 140);
             this.startButton.TabIndex = 1;
@@ -188,6 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1045, 567);
             this.Controls.Add(this.continueButton);
             this.Controls.Add(this.pokemonPreview);

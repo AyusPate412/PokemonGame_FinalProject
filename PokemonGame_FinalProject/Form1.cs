@@ -12,11 +12,28 @@ namespace PokemonGame_FinalProject
 {
     public partial class Form1 : Form
     {
+
+        //Todo:
+        //Game State 1
+        //Store
+        //Battle
+        //End screen
+        //Move coins label up
+        //separate trees
+        //trees variation
+
+        string gameState = "start";
+
         Random randGen = new Random();
+        int randX;
+        int randY;
+
         //Player
+        List<Rectangle> treesList = new List<Rectangle>(); 
         Rectangle chest = new Rectangle(30, 40, 30, 30);
         Rectangle player1 = new Rectangle(100, 100, 35, 40);
 
+        Image[] treesImg = { Properties.Resources.tree1, Properties.Resources.tree2, Properties.Resources.tree3, Properties.Resources.grass };
         Image[] playerMovements = { Properties.Resources.down1, Properties.Resources.left1, Properties.Resources.right1, Properties.Resources.up1 };
         Image playerCurrentDirection;
 
@@ -35,9 +52,13 @@ namespace PokemonGame_FinalProject
 
         //Brush
         SolidBrush transparent = new SolidBrush(Color.Transparent);
+        SolidBrush blackBrush = new SolidBrush(Color.Black);
 
         //Chest Image
         Image chestImg = Properties.Resources.chestImg;
+
+        //
+        Font drawFont = new Font("Arial", 16, FontStyle.Bold);
 
         //Player Stats
         int player1Speed = 15;
@@ -101,6 +122,9 @@ namespace PokemonGame_FinalProject
             continueButton.Visible = false;
             characterLabel.Visible = false;
             playerNameInput.Visible = false;
+            this.BackgroundImage = Properties.Resources.bg;
+
+            obstacleSpawn();
         }
         
         public void InitializePokemonChoosingScreen()
@@ -190,12 +214,16 @@ namespace PokemonGame_FinalProject
             }
             else if (gameTimer.Enabled == true)
             {
-                InitializeMainScreen();
-                e.Graphics.DrawImage(grassImg, grass);
+               
+               // e.Graphics.DrawImage(grassImg, grass);
                 e.Graphics.DrawImage(playerCurrentDirection, player1);
                 e.Graphics.DrawImage(chestImg,chest);
-               // e.Graphics.DrawString($"Coins:{playerMoney}");
-                    
+                e.Graphics.DrawString($"Coins:{playerMoney}", drawFont, blackBrush, 20, 50);
+
+                for (int i = 0; i < treesList.Count; i++)
+                {
+                    e.Graphics.DrawImage(Properties.Resources.tree1, treesList[i]);
+                }
 
                 if (gameTimer.Enabled == true && arenaScreen == true)
                     {
@@ -208,11 +236,21 @@ namespace PokemonGame_FinalProject
 
         }
 
+        private void obstacleSpawn()
+        {
+            for (int  i = 0; i < 5; i++)
+            {
+                randX = randGen.Next(50, this.Width - 50);
+                randY = randGen.Next(50, this.Height - 50);
+                Rectangle trees = new Rectangle(randX, randY, 100, 100);
+                treesList.Add(trees);
+            }
+        }
+
         private void gameTimer_Tick(object sender, EventArgs e)
         {
             PlayerMovement();
             chestSpawn();
-           
             Refresh();
         }
 
@@ -250,6 +288,7 @@ namespace PokemonGame_FinalProject
 
         private void continueButton_Click(object sender, EventArgs e)
         {
+            InitializeMainScreen();
             gameTimer.Enabled = true;
             gameTimer.Start();
 
@@ -268,14 +307,7 @@ namespace PokemonGame_FinalProject
             else if (pokemonPreview.Image == pokemonsList[3])
             {
                 actualPokemon = "Bulbasaur";
-            }
-
-            //foreach (Control c in this.Controls)
-            //{
-            //    c.Enabled = false;
-            //}
-
-         
+            }     
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
