@@ -182,5 +182,20 @@
   <ItemGroup>
     <None Include="Resources\green_tree_small.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house_large_alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\houseInterior.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VendingMachines.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exitButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\evolveButton.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
