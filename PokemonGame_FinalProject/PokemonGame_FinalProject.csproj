@@ -46,16 +46,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BattleScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BattleScreen.Designer.cs">
+      <DependentUpon>BattleScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EndScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EndScreen.Designer.cs">
+      <DependentUpon>EndScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GameScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GameScreen.Designer.cs">
+      <DependentUpon>GameScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BattleScreen.resx">
+      <DependentUpon>BattleScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EndScreen.resx">
+      <DependentUpon>EndScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GameScreen.resx">
+      <DependentUpon>GameScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -196,6 +223,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\evolveButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpgradeStatsBg.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\evolveScreen.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\evolveScreen.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boss1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

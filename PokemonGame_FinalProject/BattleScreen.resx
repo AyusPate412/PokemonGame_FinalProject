@@ -117,7 +117,38 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>38</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="attackButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DQAACw0B7QfALAAAARhJREFUWEfdjtENwzAIRLtSZsgOGTIfnaXD9KdfLiBwMAUnUSO77pNOuuBwxy2l
+        1FXusKU28yWQcZY/OQCTNM9lqUox+AGYoPHKPCkGPQA3Na91JXllnhSDHxAV7x2kGOwA3NDY4BPFwo8e
+        gC81HvNcSIqjuYVrtt5sGPBVoqJobuGa/QOiwOjbzi0cn8ERjbNhwBNRcPRt5xaOz+CIxtkw4AkJuk9T
+        oWgewbEf4BM9Z8OAJ7ofINgikRxi4Zhd8Ff6PRsGfIFXjrr8AFCBLdLlWgLnHgZXaE0MqEAKmh/glaAE
+        e5DAuYfBFVoTAyJ0qZbQ/ICjcO5hcIXWxICI7gdE8N5lYCTFigFV4b3LwEiKFdNL7rCd0u0ND6K+eeVt
+        r94AAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="healButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DQAACw0B7QfALAAAAL1JREFUWEftjjEKwkAQRXMQCwmWdiZgZ+ERvICthbUHyL2Ch/Aq1iMs+zX8ZEhc
+        dDMDGXiws+z+/woRmZXBy5y8D+W6kpzYFbhdnn/Fj8Bhf/8pfgWwp7IILAL+BM6nR2C3bQLYU+EcPwIg
+        VUT7Z19gs7oGjnUb4H0qWo59AdAN6wbwPaO943x7Ahh+yEFawdTiWPPpNSeA4Y8cjMJvizH2BTAcxEUM
+        v48xvfEjgOHgMeI3dewJzMXgZT6keAGOfa+hlnTu7AAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="spAttackButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DQAACw0B7QfALAAAAN9JREFUWEfdktENgkAQRKmDL2P4JiGxA3rg30rsyA7swWL4P3NkR5ZxT85oYM9N
+        XiLj7swkUIUQdsUUt2T+8eUcD6fwCf9TgI3HYXgL9sovoEMjVpgF9sstoEMjl6aZsMIscFd+gVTwrW0n
+        WAflFsAhYOPcYOC3AC8y975fgFeR0vleYuZctwVShqln1nVoROyf478AjK5dt+Bc1xOs6zCN2L6M/wKA
+        gwCK8L7YrI6/AmzEQTpcg33xzR6/BayQCP7njxO6+GZPOQWgryG+2eO3QAq5+9n4K7AXprgdoXoA481H
+        W74snPIAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="battleTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
 </root>
