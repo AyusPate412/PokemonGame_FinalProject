@@ -23,6 +23,10 @@ namespace PokemonGame_FinalProject
         bool playerSpAttackOnCooldown = false;
         bool cpuSpAttackOnCooldown = false;
 
+        Font drawFont = new Font("Arial", 16, FontStyle.Bold);
+
+        SolidBrush blackBrush = new SolidBrush(Color.Black);
+
         public BattleScreen()
         {
             InitializeComponent();
@@ -179,7 +183,6 @@ namespace PokemonGame_FinalProject
             }
             else if (GameScreen.bossHealth <= 0)
             {
-                MessageBox.Show("You win!");
                 GameScreen.t1.Enabled = false;
 ;               Form1.ChangeScreen(this, new EndScreen());  
             }
@@ -187,7 +190,15 @@ namespace PokemonGame_FinalProject
 
         private void BattleScreen_Paint(object sender, PaintEventArgs e)
         {
-            
+            if (GameScreen.pokemonHealth <= 0)
+            {
+                e.Graphics.DrawString("Player Lost", drawFont, blackBrush, 400, 200);
+
+            }
+            if (GameScreen.bossHealth <= 0)
+            {
+                e.Graphics.DrawString("Player Wins", drawFont, blackBrush, 400, 200);
+            }
         }
     }
 }
